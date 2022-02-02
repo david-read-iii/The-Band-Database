@@ -47,7 +47,14 @@ public class ListFragment extends Fragment {
             Bundle args = new Bundle();
             args.putInt(DetailFragment.BAND_ID_ARG, selectedBandId);
 
-            Navigation.findNavController(itemView).navigate(R.id.show_item_detail, args);
+            View detailFragmentContainer = rootView.findViewById(R.id.detail_fragment_container);
+            if (detailFragmentContainer == null) {
+                // Load DetailFragment in container where ListFragment is.
+                Navigation.findNavController(itemView).navigate(R.id.show_item_detail, args);
+            } else {
+                // Load DetailFragment next to ListFragment.
+                Navigation.findNavController(detailFragmentContainer).navigate(R.id.fragment_detail, args);
+            }
         };
 
         // Get List of Band objects from BandRepository.
