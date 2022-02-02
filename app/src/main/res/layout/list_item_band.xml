@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
+
+    <!-- Band name TextView. -->
+    <TextView
+        android:id="@+id/band_name"
+        style="@style/bandListName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Band" />
+
+</LinearLayout>
