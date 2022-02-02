@@ -15,6 +15,12 @@ import android.widget.TextView;
 public class DetailFragment extends Fragment {
 
     /**
+     * {@link String} identifier for finding the selected {@link Band} id in the {@link Bundle}
+     * arguments passed to this fragment.
+     */
+    public static final String BAND_ID_ARG = "band_id";
+
+    /**
      * {@link Band} whose information is currently being displayed in this fragment.
      */
     private Band mBand;
@@ -34,8 +40,14 @@ public class DetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: Get selected bandId from ListFragment.
+        // Get selected Band id from ListFragment.
         int bandId = 1;
+        Bundle args = getArguments();
+        if (args != null) {
+            bandId = args.getInt(BAND_ID_ARG);
+        }
+
+        // Get the selected Band.
         mBand = BandRepository.getInstance(requireContext()).getBand(bandId);
     }
 

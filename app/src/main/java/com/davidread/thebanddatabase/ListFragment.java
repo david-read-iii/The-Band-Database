@@ -38,7 +38,6 @@ public class ListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
         LinearLayout layout = (LinearLayout) rootView;
 
-        // Create the buttons using the band names and ids from BandRepository
         // Create a Button for each Band provided by BandRepository.
         List<Band> bandList = BandRepository.getInstance(requireContext()).getBands();
         for (Band band : bandList) {
@@ -48,13 +47,20 @@ public class ListFragment extends Fragment {
                     LinearLayout.LayoutParams.WRAP_CONTENT);
             layoutParams.setMargins(0, 0, 0, 10);
             button.setLayoutParams(layoutParams);
-
-            // Display band's name on the Button.
             button.setText(band.getName());
 
-            // Navigate to the DetailFragment when Button is clicked.
+            // Attach Band id as a tag to the Button.
+            button.setTag(band.getId());
+
+            /* Attach OnClickListener to Button to load a new DetailFragment. Pass the tag
+             * associated with the selected Button as an argument to DetailFragment. */
             button.setOnClickListener(buttonView -> {
-                Navigation.findNavController(buttonView).navigate(R.id.show_item_detail);
+
+                int selectedBandId = (int) buttonView.getTag();
+                Bundle args = new Bundle();
+                args.putInt(DetailFragment.BAND_ID_ARG, selectedBandId);
+
+                Navigation.findNavController(buttonView).navigate(R.id.show_item_detail, args);
             });
 
             // Add the Button to the LinearLayout.
