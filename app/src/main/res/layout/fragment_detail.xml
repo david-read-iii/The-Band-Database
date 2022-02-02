@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailFragment">
+
+    <!-- Band name TextView. -->
+    <TextView
+        android:id="@+id/band_name"
+        style="@style/bandName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Band Name" />
+
+    <!-- Description TextView. -->
+    <TextView
+        android:id="@+id/band_description"
+        style="@style/bandDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Description" />
+
+</LinearLayout>

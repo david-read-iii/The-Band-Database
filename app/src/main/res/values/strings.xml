@@ -1,3 +1,32 @@
 <resources>
+
+    <!-- App name. -->
     <string name="app_name">The Band Database</string>
+
+    <!-- DetailFragment label. -->
+    <string name="detail_fragment_label">Details</string>
+
+    <!-- Dummy values. -->
+    <string-array name="bands">
+        <item>The Beatles</item>
+        <item>Nirvana</item>
+        <item>U2</item>
+        <item>BTS</item>
+        <item>Linkin Park</item>
+        <item>Pink Floyd</item>
+        <item>Led Zeppelin</item>
+        <item>Aerosmith</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>An English rock band that formed in Liverpool in 1960.</item>
+        <item>An American rock band that formed in Washington in 1987.</item>
+        <item>An Irish rock band from Dublin that formed in 1976.</item>
+        <item>A South Korean boy band that formed in Seoul in 2010.</item>
+        <item>An American rock band that formed in California in 1996.</item>
+        <item>An English rock band that formed in London in 1964.</item>
+        <item>An English rock band that formed in London in 1968.</item>
+        <item>An American rock band that formed in Boston in 1970.</item>
+    </string-array>
+
 </resources>
